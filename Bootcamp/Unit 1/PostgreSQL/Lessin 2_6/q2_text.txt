@@ -1,0 +1,12 @@
+Question: What neighborhoods seem to be the most popular?
+
+-- Answer: Misson seems to be the most desiered neighbourhood in SF for AirBnB people
+
+SELECT
+	COUNT(*), neighbourhood
+FROM
+	sfo_listings
+GROUP BY 
+	neighbourhood
+ORDER BY
+	COUNT(*) DESC

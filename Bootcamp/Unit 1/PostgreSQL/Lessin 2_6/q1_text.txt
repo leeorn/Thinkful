@@ -1,0 +1,12 @@
+Question:
+What's the most expensive listing? What else can you tell me about the listing?
+
+-- Question 1: the most expensive apartment from listings costs $1000 a night. 
+-- It's located in Western Addition
+SELECT 
+	*
+FROM 
+	sfo_listings
+ORDER BY
+	price DESC
+limit 5

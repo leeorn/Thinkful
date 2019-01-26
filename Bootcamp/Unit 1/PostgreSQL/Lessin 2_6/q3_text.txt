@@ -1,0 +1,22 @@
+Question: What time of year is the cheapest time to go to San Francisco? 
+What about the busiest?
+
+answer:
+
+A) 
+select min(sfo_listings.price), date_part('month', calender_date), count(*)
+from sfo_listings
+join
+sfo_calendar
+on sfo_listings.id = sfo_calendar.listing_id
+where sfo_listings.price != 0
+group by date_part('month', calender_date)
+order by count(*) DESC
+
+
+
+B) 
+select date_part('month', calender_date), count(*)
+from sfo_calendar
+group by date_part('month', calender_date)
+order by count(*) DESC
